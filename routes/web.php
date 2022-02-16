@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('Estudiantes.lista');
+    return view('diseños.base');
 });
+route::get("/LISTADO",[\App\Http\Controllers\estudiantescontroller::class,'listado']);
 route::get("/CREAR",[\App\Http\Controllers\estudiantescontroller::class,'estudiform']);
 route::get("/GUARDAR",[\App\Http\Controllers\estudiantescontroller::class,'save'])->name("save");

@@ -1,5 +1,6 @@
 @extends('diseños.base')
-<div class="container mt-5">
+@section('content')
+<div class="container mt-3">
     <div class="row justify-content-center">
         <div class="col-md-5 mt-5">
             <!--MENSAJE FLASH-->
@@ -23,7 +24,7 @@
             <div class="card">
                 <form action="{{route('save')}}" mathod="POST">
                     @csrf
-                    <div class="card-header text-center text-white bg-dark">AGREGAR ESTUDIANTE</div>
+                    <div class="card-header text-center text-white bg-dark">INGRESAR ESTUDIANTE</div>
                         <div class="card-body">
                             <div class=" form-group col-md-12 ">
                                 <label for="">Nombre</label>
@@ -67,3 +68,4 @@
         </div>
     </div>
 </div>
+@endsection

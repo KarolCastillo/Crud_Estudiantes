@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class estudiantescontroller extends Controller
 {
+    //LISTADO DE USUARIOS
+    public function listado(){
+        $data['estudiantes']=estudiantes::paginate(3);
+        return view('Estudiantes.lista',$data);
+    }
+
     //FORMULARIO CREAR ESTUDIANTES
     public function estudiform(){
         return view('Estudiantes.estudiform');

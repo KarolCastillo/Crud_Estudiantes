@@ -13,7 +13,20 @@
 </head>
 <body>
 
+<!-- Image and text-->
 
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link " href="{{url('/')}}">MENU PRINCIPAL</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url('/LISTADO')}}">LISTADO ESTUDIANTES</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url('/CREAR')}}">INGRESAR NUEVO ESTUDIANTE</a>
+    </li>
+
+</ul>
 <div class="container">
     @yield('content')
 </div>
