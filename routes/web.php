@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Estudiantes.lista');
 });
+route::get("/CREAR",[\App\Http\Controllers\estudiantescontroller::class,'estudiform']);
+route::get("/GUARDAR",[\App\Http\Controllers\estudiantescontroller::class,'save'])->name("save");

@@ -142,9 +142,24 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'nombre' => [
+            'requiered' => 'El nombre es requerido'
         ],
+
+         'edad' => [
+        'requiered' => 'La edad es requerida'
+         ],
+
+         'direccion' => [
+         'requiered' => 'La direccion es requerida'
+        ],
+
+        'email' => [
+            'requiered' => 'El Correo es requerido',
+            'email'=> 'Formato de Correo incorrecto',
+            'unique'=> 'El correo ya existe en la BD'
+        ]
+
     ],
 
     /*
