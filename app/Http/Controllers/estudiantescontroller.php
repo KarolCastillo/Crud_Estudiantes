@@ -25,7 +25,9 @@ class estudiantescontroller extends Controller
             'nombre'=>'required',
             'email'=>'required|email|unique:estudiantes',
             'edad'=>'required',
-            'direccion'=>'required'
+            'grado'=>'required',
+            'direccion'=>'required',
+            'jornada'=>'required'
         ]);
         $userdata = request()->except('_token');
         estudiantes::insert($userdata);
