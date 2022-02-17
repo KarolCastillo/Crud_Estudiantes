@@ -31,4 +31,24 @@ class estudiantescontroller extends Controller
         estudiantes::insert($userdata);
         return back() ->with('estudianteguardado', 'Estudiante guardado con exito');
     }
+
+    //ELIMINAR ESTUDIANTES
+    public function delete($id){
+        estudiantes::destroy($id);
+        return back() ->with('estudianteguardado', 'Estudiante guardado con exito');
+    }
+
+    //FORMULARIO PARA EDITAR ESTUDIANTES
+    public function modificar($id){
+        $estudiante=estudiantes::findorfail($id);
+        return view('Estudiantes.editform', compact('estudiante'));
+    }
+
+    //EDITAR ESTUDIANTES
+    public function edit(Request $request,$id){
+        $datosestudiante=request()->except((['_token','_method']));
+        estudiantes::where('id','=', $id)->update($datosestudiante);
+        return back() ->with('estudiantemodificado', 'Estudiante modificado con exito');
+    }
+
 }

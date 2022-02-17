@@ -58,8 +58,9 @@
                             </div-->
 
                             <div class="row form-group justify-content-center">
-                                <button type="submit" class="btn btn-success col-md-4 mt-3 mr-2 offset">GUARDAR</button>
-                                <a type="button " href="{{ url('/')}}" class="btn btn-danger col-md-4 mt-3 offset float-right">CANCELAR </a>
+                                <button type="submit" class="btn btn-success col-md-3 mt-3 mr-2 offset">GUARDAR</button>
+                                <a type="button " href="{{ url('/LISTADO')}}" class="btn btn-primary col-md-3 mt-3 mr-2 offset float-right">VOLVER </a>
+                                <a type="button " href="{{ url('/LISTADO')}}" class="btn btn-danger col-md-3 mt-3 offset float-right">CANCELAR </a>
                             </div>
                     </div>
 
