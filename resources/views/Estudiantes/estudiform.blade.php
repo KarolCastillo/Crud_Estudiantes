@@ -1,6 +1,6 @@
 @extends('diseños.base')
 @section('content')
-<div class="container mt-3">
+<div class="container mt-6">
     <div class="row justify-content-center">
         <div class="col-md-5 mt-5">
             <!--MENSAJE FLASH-->
@@ -72,6 +72,7 @@
                     </div>
 
                 </form>
+
             </div>
         </div>
     </div>
