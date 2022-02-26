@@ -10,7 +10,7 @@ class estudiantes extends Model
     protected $table='estudiantes';
     public $timestamps=false;
     protected $fillable=[
-        'id', 'nombre', 'email', 'direccion', 'edad', 'grado', 'jornada'
+        'id', 'nombre', 'email', 'direccion', 'edad', 'grado'
     ];
 
     protected $primaryKey='id';

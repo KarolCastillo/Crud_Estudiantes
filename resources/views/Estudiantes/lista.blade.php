@@ -14,7 +14,7 @@
                     <th scope="col">DIRECCION</th>
                     <th scope="col">EDAD</th>
                     <th scope="col">GRADO</th>
-                    <th scope="col">JORNADA</th>
+
                     <th scope="col">OPCIONES</th>
                 </tr>
                 </thead>
@@ -28,7 +28,7 @@
                         <td class=" border px-4 py-2">{{$estudiante->direccion}}</td>
                         <td class=" border px-4 py-2">{{$estudiante->edad}}</td>
                         <td class=" border px-4 py-2">{{$estudiante->grado}}</td>
-                        <td class=" border px-4 py-2">{{$estudiante->jornada}}</td>
+
                         <td class=" border px-4 py-2">
                             <div class="btn-group flex justify-center rounded-lg text-lg">
                             <a href="{{ route('modificar',$estudiante->id)}}" class=" mr-2 btn btn-primary">

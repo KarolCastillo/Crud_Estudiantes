@@ -51,10 +51,7 @@
                                 <label for="">Grado</label>
                                 <input type="text" class="form-control" name="grado" placeholder="Grado">
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="">Jornada</label>
-                                <input type="text" class="form-control" name="jornada" placeholder="D. M.">
-                            </div>
+
                             </div>
                             <!--div class="form-group col-md-12">
                                 <label for="">Asignar Grado</label>

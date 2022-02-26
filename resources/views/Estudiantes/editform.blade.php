@@ -54,10 +54,7 @@
                                     <label for="">Grado</label>
                                     <input type="text" class="form-control" value="{{$estudiante->grado}}" name="grado" placeholder="Grado">
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label for="">Jornada</label>
-                                    <input type="text" class="form-control" value="{{$estudiante->jornada}}" name="jornada" placeholder="D. M.">
-                                </div>
+
                             </div>
                             <!--div class="form-group col-md-12">
                                 <label for="">Asignar Grado</label>
