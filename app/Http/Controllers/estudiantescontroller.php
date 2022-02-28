@@ -10,7 +10,7 @@ class estudiantescontroller extends Controller
 {
     //LISTADO DE USUARIOS
     public function listado(){
-        $data['estudiantes']=estudiantes::paginate(3);
+        $data['estudiantes']=estudiantes::paginate(75);
         return view('Estudiantes.lista',$data);
     }
 

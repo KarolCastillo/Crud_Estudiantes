@@ -1,9 +1,9 @@
 @extends('diseños.base')
 @section('content')
 
-<div class="container mt-5">
+<div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-15">
             <h2 class="text-center mb-5"> LISTADO DE ESTUDIANTES INSCRITOS </h2>
 
             <table class="table table-bordered table-strpied text-center">
