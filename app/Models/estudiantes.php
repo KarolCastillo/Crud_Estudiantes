@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class estudiantes extends Model
 {
-    //use HasFactory;
+    use HasFactory;
     protected $table='estudiantes';
     public $timestamps=false;
     protected $fillable=[

@@ -15,7 +15,7 @@ class estudiantescontroller extends Controller
         $estudiantes = DB::table('estudiantes')
             ->join('grado', 'estudiantes.grado', '=', 'grado.id')
             ->select('estudiantes.*', 'grado.descripcion')
-            ->paginate(3);
+            ->paginate(10);
 
 
         return view('Estudiantes.lista', compact('estudiantes'));
