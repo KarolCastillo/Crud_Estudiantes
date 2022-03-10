@@ -28,38 +28,38 @@
                         <div class="card-body">
                             <div class=" form-group col-md-12 ">
                                 <label for="">Nombre</label>
-                                <input type="text" class="form-control " name="nombre" placeholder="Inserte un nombre">
+                                <input type="text" class="form-control border border-success" name="nombre" placeholder="Inserte un nombre">
                             </div>
 
                             <div class=" form-group col-md-12 ">
                                 <label for="">Email</label>
-                                <input type="text" class="form-control " name="email" placeholder="Ejemplo@gmail.com">
+                                <input type="text" class="form-control border border-success " name="email" placeholder="Ejemplo@gmail.com">
                             </div>
 
 
                             <div class="form-group col-md-12">
                                 <label for="">Direccion Casa</label>
-                                <input type="text" class="form-control" name="direccion"  placeholder="Inserte una direccion">
+                                <input type="text" class="form-control border border-success" name="direccion"  placeholder="Inserte una direccion">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 ">
                                 <label for="">Edad</label>
-                                <input type="text" class="form-control" name="edad" placeholder="Edad">
+                                <input type="text" class="form-control border border-success" name="edad" placeholder="Edad">
                             </div>
 
-                            <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="">Grado</label>
-                                <input type="text" class="form-control" name="grado" placeholder="Grado">
-                            </div>
+                            <div class="form-row col-md-12">
+
+                                <div class="form-group col-md-6 font-italic">
+                                    <label for="">Grado</label>
+                                    <select name="grado" class="form-control border border-success">
+                                        <option value="" >Seleccione Grado...</option>
+                                        @foreach( $grado as $grados)
+                                            <option value="{{$grados->id}}"> {{$grados->descripcion}}  </option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
 
                             </div>
-                            <!--div class="form-group col-md-12">
-                                <label for="">Asignar Grado</label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Seleccione grado</option>
-                                    <option>...</option>
-                                </select>
-                            </div-->
 
                             <div class="row form-group justify-content-center">
                                 <button type="submit" class="btn btn-success col-md-3 mt-3 mr-2 offset">GUARDAR</button>

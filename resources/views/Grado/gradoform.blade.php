@@ -27,8 +27,13 @@
                     <div class="card-header text-center text-white bg-dark">INGRESAR NUEVO GRADO</div>
                         <div class="card-body">
                             <div class=" form-group col-md-12 ">
-                                <label for="">Nombre</label>
-                                <input type="text" class="form-control " name="nombre" placeholder="Inserte un nombre">
+                                <label for="">ID</label>
+                                <input type="text" class="form-control " name="id" placeholder="Inserte un nombre">
+                            </div>
+
+                            <div class=" form-group col-md-12 ">
+                                <label for="">Grado</label>
+                                <input type="text" class="form-control " name="descripcion" placeholder="Inserte un nombre">
                             </div>
 
                             </div>

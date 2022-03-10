@@ -11,7 +11,7 @@ class grado extends Model
     protected $table='grado';
     public $timestamps=false;
     protected $fillable=[
-        'id', 'nombre'
+        'id', 'descripcion'
     ];
 
     protected $primaryKey='id';

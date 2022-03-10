@@ -21,7 +21,8 @@ class gradocontroller extends Controller
     //GUARDAR NUEVO GRADO
     public function save(Request $request){
         $validator=$this->validate($request,[
-            'nombre'=>'required',
+            'id'=>'required',
+            'descripcion'=>'required',
 
         ]);
         $userdata = request()->except('_token');

@@ -27,7 +27,7 @@
                         <td class=" border px-4 py-2">{{$estudiante->email}}</td>
                         <td class=" border px-4 py-2">{{$estudiante->direccion}}</td>
                         <td class=" border px-4 py-2">{{$estudiante->edad}}</td>
-                        <td class=" border px-4 py-2">{{$estudiante->grado}}</td>
+                        <td class=" border px-4 py-2">{{$estudiante->descripcion}}</td>
 
                         <td class=" border px-4 py-2">
                             <div class="btn-group flex justify-center rounded-lg text-lg">

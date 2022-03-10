@@ -29,30 +29,37 @@
                         <div class="card-body">
                             <div class=" form-group col-md-12 ">
                                 <label for="">Nombre</label>
-                                <input type="text" class="form-control " value="{{$estudiante->nombre}}" name="nombre" placeholder="Inserte un nombre">
+                                <input type="text" class="form-control border border-success" value="{{$estudiante->nombre}}" name="nombre" placeholder="Inserte un nombre">
                             </div>
 
                             <div class=" form-group col-md-12 ">
                                 <label for="">Email</label>
-                                <input type="text" class="form-control " value="{{$estudiante->email}}" name="email" placeholder="Ejemplo@gmail.com">
+                                <input type="text" class="form-control border border-success " value="{{$estudiante->email}}" name="email" placeholder="Ejemplo@gmail.com">
                             </div>
 
 
                             <div class="form-group col-md-12">
                                 <label for="">Direccion Casa</label>
-                                <input type="text" class="form-control" value="{{$estudiante->direccion}}" name="direccion"  placeholder="Inserte una direccion">
+                                <input type="text" class="form-control border border-success" value="{{$estudiante->direccion}}" name="direccion"  placeholder="Inserte una direccion">
                             </div>
 
 
                             <div class="form-group col-md-6">
                                 <label for="">Edad</label>
-                                <input type="text" class="form-control" value="{{$estudiante->edad}}" name="edad" placeholder="Edad">
+                                <input type="text" class="form-control border border-success" value="{{$estudiante->edad}}" name="edad" placeholder="Edad">
                             </div>
 
-                            <div class="row">
-                                <div class="form-group col-md-6">
+                            <div class="form-row col-md-12">
+
+                                <div class="form-group col-md-6 font-italic">
                                     <label for="">Grado</label>
-                                    <input type="text" class="form-control" value="{{$estudiante->grado}}" name="grado" placeholder="Grado">
+                                    <select name="grado" class="form-control border border-success">
+                                        <option value="" >Seleccione Grado...</option>
+                                        @foreach( $grado as $grados)
+                                            <option value="{{$grados->id}}"> {{$grados->descripcion}}  </option>
+                                        @endforeach
+                                    </select>
+
                                 </div>
 
                             </div>

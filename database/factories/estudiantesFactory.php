@@ -20,7 +20,7 @@ class estudiantesFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'edad' => $this->faker->randomElement([17,18, 19, 20, 21]),
             'grado' => $this->faker->randomElement(['4to ','3ro ', '5to ', '6to']),
-            'direccion' => $this->faker->address()
+            'direccion' => $this->faker->address(),
 
         ];
     }

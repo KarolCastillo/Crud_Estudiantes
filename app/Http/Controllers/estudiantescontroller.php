@@ -1,22 +1,32 @@
 <?php
 
 namespace App\Http\Controllers;
-
+//use App\Models\jornada;
+use App\Models\grado;
 use App\Models\estudiantes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class estudiantescontroller extends Controller
 {
     //LISTADO DE USUARIOS
     public function listado(){
-        $data['estudiantes']=estudiantes::paginate(75);
-        return view('Estudiantes.lista',$data);
+        $estudiantes = DB::table('estudiantes')
+            ->join('grado', 'estudiantes.grado', '=', 'grado.id')
+            ->select('estudiantes.*', 'grado.descripcion')
+            ->paginate(3);
+
+
+        return view('Estudiantes.lista', compact('estudiantes'));
+       // $data['estudiantes']=estudiantes::paginate(75);
+     //   return view('Estudiantes.lista',$data);
     }
 
     //FORMULARIO CREAR ESTUDIANTES
     public function estudiform(){
-        return view('Estudiantes.estudiform');
+        $grado = grado::all();
+        return view('Estudiantes.estudiform',compact('grado'));
     }
 
     //GUARDAR NUEVO ESTUDIANTES
@@ -26,12 +36,23 @@ class estudiantescontroller extends Controller
             'email'=>'required|email|unique:estudiantes',
             'edad'=>'required',
             'grado'=>'required',
-            'direccion'=>'required'
-
+            'direccion'=>'required',
+            //
         ]);
-        $userdata = request()->except('_token');
-        estudiantes::insert($userdata);
-        return back() ->with('estudianteguardado', 'Estudiante guardado con exito');
+        //$userdata = request()->except('_token');
+        //estudiantes::insert($userdata);
+        //return back() ->with('estudianteguardado', 'Estudiante guardado con exito');
+        /* Guardamos en la Base de datos */
+        estudiantes::create([
+            'nombre' =>$validator['nombre'],
+            'email'=>$validator['email'],
+            'edad'=>$validator['edad'],
+            'grado'=>$validator['grado'],
+            'direccion'=>$validator['direccion'],
+            //'idjornada'=>$validator['jornada'],
+        ]);
+        // return redirect('/')->with('guardar', 'ok');
+        return back()->with('estudianteguardado', 'Estudiante guardado con exito');
     }
 
     //ELIMINAR ESTUDIANTES
@@ -43,7 +64,12 @@ class estudiantescontroller extends Controller
     //FORMULARIO PARA EDITAR ESTUDIANTES
     public function modificar($id){
         $estudiante=estudiantes::findorfail($id);
-        return view('Estudiantes.editform', compact('estudiante'));
+        $grado = grado::all();
+        return view('Estudiantes.editform', compact('estudiante', 'grado'));
+
+      //  $cript = criptomoneda::findOrFail($id);
+      //  $lenguaje= Lenguaje::all();
+      //  return view('archivo.editar', compact('cript', 'lenguaje'));
     }
 
     //EDITAR ESTUDIANTES
@@ -51,6 +77,9 @@ class estudiantescontroller extends Controller
         $datosestudiante=request()->except((['_token','_method']));
         estudiantes::where('id','=', $id)->update($datosestudiante);
         return back() ->with('estudiantemodificado', 'Estudiante modificado con exito');
+
+
+
     }
 
 }
