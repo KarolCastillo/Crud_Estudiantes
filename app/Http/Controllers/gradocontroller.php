@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+//importamos para las excepciones
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Models\grado;
 
 class gradocontroller extends Controller
@@ -15,7 +16,13 @@ class gradocontroller extends Controller
 
     //FORMULARIO PARA CREAR NUEVO GRADO
     public function gradoform(){
-        return view('Grado.gradoform');
+        try {
+            //log::debug('es una prueba');
+            return view('Grado.lol');
+            //   return view('Grado.gradoform');
+        }catch (\Exception $e){
+            log::debug($e-> getMessage());
+        }
     }
 
     //GUARDAR NUEVO GRADO
