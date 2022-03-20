@@ -26,7 +26,7 @@ class gradocontroller extends Controller
         try {
 
             return view('Grado.lol');
-
+            //return view('Grado.gradoform');
         } catch (\Exception $e) {
             log::debug($e->getMessage());
             return view('Errors.errorvista');

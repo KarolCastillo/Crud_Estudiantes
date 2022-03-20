@@ -15,7 +15,7 @@
 <body>
 
 <div id="apartado-derecho" style="background-color: #6cf5ea;" class="absolute pin bg-cover bg-no-repeat md:bg-left lg:bg-center">
-    <h2 class="text-center">ERROR 404 REGRESA A INICIO</h2>
+    <h2 class="text-center"> Fatal ERROR 404 REGRESA A INICIO</h2>
     <ul>
         <li><a href="/">Inicio</a></li>
 
