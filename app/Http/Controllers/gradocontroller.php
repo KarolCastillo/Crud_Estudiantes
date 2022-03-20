@@ -10,18 +10,26 @@ class gradocontroller extends Controller
 {
     //LISTADO DE LOS GRADOS DISPONIBLES
     public function listado(){
+        try {
         $data['grado']=grado::paginate(75);
-        return view('Grado.listagrado',$data);
+        return view('Grado.listagradok',$data);
+
+        } catch (\Exception $e) {
+            log::debug($e->getMessage());
+            return view('Errors.errorvista');
+        }
     }
 
     //FORMULARIO PARA CREAR NUEVO GRADO
-    public function gradoform(){
+    public function gradoform()
+    {
         try {
-            //log::debug('es una prueba');
+
             return view('Grado.lol');
-            //   return view('Grado.gradoform');
-        }catch (\Exception $e){
-            log::debug($e-> getMessage());
+
+        } catch (\Exception $e) {
+            log::debug($e->getMessage());
+            return view('Errors.errorvista');
         }
     }
 
