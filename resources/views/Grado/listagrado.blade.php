@@ -24,7 +24,7 @@
 
                         <td class=" border px-4 py-2">
                             <div class="btn-group flex justify-center rounded-lg text-lg">
-                            <form action="{{ route('delete_grado',$grados->id)}}" method="POST">
+                            <form action="{{ route('delete_grado',$grados->id)}}" class="eliminar-registro" method="POST">
                                   @csrf @method('DELETE')
                             <button type="submit" onclick="return confirm('Esta seguro de eliminar registro de grado');" class=" btn btn-danger" >
                                 <i class="fas fa-trash-alt"></i>
@@ -42,4 +42,35 @@
         </div>
     </div>
 </div>
+@endsection
+
+<!--seccion de la alerta-->
+@section('alert')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    $('.eliminar-registro').submit(function(r){
+        r.preventDefault();
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+
+    });
+
+
+    </script>
 @endsection

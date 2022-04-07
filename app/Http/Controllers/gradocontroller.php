@@ -12,11 +12,13 @@ class gradocontroller extends Controller
     public function listado(){
         try {
         $data['grado']=grado::paginate(75);
-        return view('Grado.listagradok',$data);
+        return view('Grado.listagrado',$data);
 
-        } catch (\Exception $e) {
-            log::debug($e->getMessage());
-            return view('Errors.errorvista');
+        } catch (\Exception $excep) {
+            $message=$excep->getMessage();
+            $tipoError=" Excepción General Vista ";
+
+            return view('Errors.errorvista', compact('message', 'tipoError'));
         }
     }
 
@@ -25,16 +27,21 @@ class gradocontroller extends Controller
     {
         try {
 
-            return view('Grado.lol');
+            return view('Grado.gradoform');
             //return view('Grado.gradoform');
-        } catch (\Exception $e) {
-            log::debug($e->getMessage());
-            return view('Errors.errorvista');
+        } catch (\Exception $excep) {
+            $message=$excep->getMessage();
+            $tipoError=" Excepción General Vista ";
+            return view('Errors.errorvista', compact('message', 'tipoError'));
+
         }
     }
 
     //GUARDAR NUEVO GRADO
     public function save(Request $request){
+
+        try{
+
         $validator=$this->validate($request,[
             'id'=>'required',
             'descripcion'=>'required',
@@ -43,6 +50,14 @@ class gradocontroller extends Controller
         $userdata = request()->except('_token');
         grado::insert($userdata);
         return back() ->with('gradoguardado', 'Grado guardado con exito');
+
+        } catch (\Exception $excep) {
+            $message=$excep->getMessage();
+            $tipoError=" Excepción General Vista ";
+            return view('Errors.errorvista', compact('message', 'tipoError'));
+
+        }
+
     }
 
     //ELIMINAR GRADO
