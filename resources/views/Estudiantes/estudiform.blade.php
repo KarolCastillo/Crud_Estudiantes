@@ -2,7 +2,7 @@
 @section('content')
 <div class="container mt-6">
     <div class="row justify-content-center">
-        <div class="col-md-5 mt-5">
+        <div class="col-md-6 mt-4">
             <!--MENSAJE FLASH-->
             @if(session('estudianteguardado'))
                 <div class="alert alert-success">
@@ -21,7 +21,7 @@
                 </div>
             @endif
 
-            <div class="card">
+            <div class="card ">
                 <form action="{{route('save')}}" mathod="POST">
                     @csrf
                     <div class="card-header text-center text-white bg-dark">INGRESAR ESTUDIANTE</div>
@@ -62,9 +62,9 @@
                             </div>
 
                             <div class="row form-group justify-content-center">
-                                <button type="submit" class="btn btn-success col-md-3 mt-3 mr-2 offset">GUARDAR</button>
-                                <a type="button " href="{{ url('/LISTADO')}}" class="btn btn-primary col-md-3 mt-3 mr-2 offset float-right">VOLVER </a>
-                                <a type="button " href="{{ url('/LISTADO')}}" class="btn btn-danger col-md-3 mt-3 offset float-right">CANCELAR </a>
+                                <button type="submit" class="btn btn-success col-md-3 mt-3 mr-2 offset">Guardar  <i class="fas fa-save"></i></button>
+                                <a type="button " href="{{ url('/LISTADO')}}" class="btn btn-primary col-md-3 mt-3 mr-2 offset float-right"> Volver <i class="fas fa-undo"> </i></a>
+                                <a type="button " href="{{ url('/LISTADO')}}" class="btn btn-danger col-md-3 mt-3 mr-2 offset float-right">Cancelar <i class="fas fa-ban"></i> </a>
                             </div>
                     </div>
 
@@ -75,3 +75,4 @@
     </div>
 </div>
 @endsection
+

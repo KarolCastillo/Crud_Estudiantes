@@ -34,9 +34,9 @@
                             <a href="{{ route('modificar',$estudiante->id)}}" class=" mr-2 btn btn-primary">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
-                            <form action="{{ route('delete',$estudiante->id)}}" method="POST">
+                            <form action="{{ route('delete',$estudiante->id)}}" id="{{$estudiante->id}}" method="POST">
                                   @csrf @method('DELETE')
-                            <button type="submit" onclick="return confirm('Eliminar registro de estudiante');" class=" btn btn-danger" >
+                            <button type="button" onclick="EliminarEstudiante({{$estudiante->id}})" class=" btn btn-danger" >
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                             </form>
@@ -54,4 +54,31 @@
 </div>
 @endsection
 @section('content')
+
+    <!--seccion de la alerta-->
+@section('alert')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function EliminarEstudiante(Estudiante){
+            Swal.fire({
+                title: 'Estas seguro de eliminar al estudiante?',
+                text: "No podras revertir esta accion!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, Eliminar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(Estudiante).submit()
+                    Swal.fire(
+                        'Eliminado!',
+                        'El grado desaparecio.',
+                        'success'
+                    )
+                }
+            })
+        }
+    </script>
+@endsection
 

@@ -46,9 +46,9 @@
                             </div-->
 
                             <div class="row form-group justify-content-center">
-                                <button type="submit" class="btn btn-success col-md-3 mt-3 mr-2 offset">GUARDAR</button>
-                                <a type="button " href="{{ url('/LISTADO_GRADO')}}" class="btn btn-primary col-md-3 mt-3 mr-2 offset float-right">VOLVER </a>
-                                <a type="button " href="{{ url('/LISTADO_GRADO')}}" class="btn btn-danger col-md-3 mt-3 offset float-right">CANCELAR </a>
+                                <button type="submit" class="btn btn-success col-md-3 mt-3 mr-2 offset">Guardar <i class="fas fa-save"></i> </button>
+                                <a type="button " href="{{ url('/LISTADO_GRADO')}}" class="btn btn-primary col-md-3 mt-3 mr-2 offset float-right">Volver  <i class="fas fa-undo"> </i></a>
+                                <a type="button " href="{{ url('/LISTADO_GRADO')}}" class="btn btn-danger col-md-3 mt-3 offset float-right">Cancelar <i class="fas fa-ban"></i> </a>
                             </div>
 
 

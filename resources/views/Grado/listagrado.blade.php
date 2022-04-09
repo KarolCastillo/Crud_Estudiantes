@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-15">
                 <h2 class="text-center mb-5"> LISTADO DE LOS GRADOS </h2>
-                <a type="button " href="{{ url('/CREAR_GRADO')}}" class="btn btn-success mb-3 mt-3 mr-2 md-3 offset float-left">NUEVO </a>
+                <a type="button " href="{{ url('/CREAR_GRADO')}}" class="btn btn-success mb-3 mt-3 mr-2 md-3 offset float-left">NUEVO  <i class="fas fa-plus"></i></a>
                 <table class="table table-bordered table-strpied text-center">
                     <thead class="thead-dark">
                     <tr>
@@ -51,7 +51,7 @@
         function eliminarGrado(grado){
             Swal.fire({
                 title: 'Estas seguro de eliminar el grado?',
-                text: "No podras revertir estoa accion!",
+                text: "No podras revertir esta accion!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

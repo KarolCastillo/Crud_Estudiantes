@@ -2,7 +2,7 @@
 @section('content')
     <div class="container mt-3">
         <div class="row justify-content-center">
-            <div class="col-md-5 mt-5">
+            <div class="col-md-6 mt-4">
                 <!--MENSAJE FLASH-->
                 @if(session('estudiantemodificado'))
                     <div class="alert alert-success">
@@ -72,9 +72,9 @@
                             </div-->
 
                             <div class="row form-group justify-content-center">
-                                <button type="submit" class="btn btn-success col-md-3 mt-3 mr-2 offset">EDITAR</button>
-                                <a type="button " href="{{ url('/LISTADO')}}" class="btn btn-primary col-md-3 mt-3 mr-2 offset float-right">VOLVER </a>
-                                <a type="button " href="{{ url('/LISTADO')}}" class="btn btn-danger col-md-3 mt-3 offset float-right">CANCELAR </a>
+                                <button type="submit" class="btn btn-success col-md-3 mt-3 mr-2 offset">Editar <i class="fas fa-edit"></i></button>
+                                <a type="button " href="{{ url('/LISTADO')}}" class="btn btn-primary col-md-3 mt-3 mr-2 offset float-right"> Volver <i class="fas fa-undo"> </i></a>
+                                <a type="button " href="{{ url('/LISTADO')}}" class="btn btn-danger col-md-3 mt-3 mr-2 offset float-right">Cancelar <i class="fas fa-ban"></i> </a>
                             </div>
                         </div>
 
